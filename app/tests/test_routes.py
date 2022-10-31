@@ -21,7 +21,7 @@ def test_predict_health_route():
     client = app.test_client()
     url = "/predict_on_health"
     query_1 = {"age":"18","absences":"9","health":"5"}
-    query_2 = {"fuck":"18","absences":"9","health":"5"}
+    query_2 = {"bad_age_name":"18","absences":"9","health":"5"}
     query_3 = {"age":"189999999","absences":"9","health":"5"}
 
     response = client.get(url, query_string = query_1)
