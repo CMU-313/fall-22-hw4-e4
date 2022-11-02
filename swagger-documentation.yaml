@@ -16,7 +16,7 @@ paths:
   /predict_on_study:
     get:
       summary: Predicts the acceptance of a Grad Student candidate based off study criteria
-      parameters:d
+      parameters:
       - name: G1
         in: query
         description: first period grade
