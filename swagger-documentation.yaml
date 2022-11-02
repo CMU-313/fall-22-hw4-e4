@@ -2,7 +2,7 @@
 openapi: 3.0.0
 info:
   title: Teedy Acceptance API
-  description: ML Grad Student Prediction API
+  description: ML Grad Student Predicition API
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -13,77 +13,29 @@ servers:
 - url: http://127.0.0.1:5000
   description: SwaggerHub API Auto Mocking
 paths:
-  /predict_on_health:
+  /predict_on_study:
     get:
-      summary: Predicts the acceptance of a Grad Student candidate based off health criteria
+      summary: Predicts the acceptance of a Grad Student candiate based off study criteria
       parameters:
-      - name: age
+      - name: G1
         in: query
-        description: student's age
+        description: first period grade
         required: false
         style: form
         explode: true
         schema:
-          maximum: 22
-          minimum: 15
-          type: integer
-          format: int32
-      - name: health
-        in: query
-        description: current health status
-        required: false
-        style: form
-        explode: true
-        schema:
-          maximum: 5
-          minimum: 1
-          type: integer
-          format: int32
-      - name: absences
-        in: query
-        description: number of school absences
-        required: false
-        style: form
-        explode: true
-        schema:
-          maximum: 93
+          maximum: 20
           minimum: 0
           type: integer
           format: int32
-      responses:
-        "200":
-          description: Calls ML model to make prediction based off of health characteristics
-          content:
-            application/json:
-              schema:
-                type: object
-        "400":
-          description: Bad input parameter
-        "500":
-          description: Internal server error
-  /predict_on_study:
-    get:
-      summary: Predicts the acceptance of a Grad Student candidate based off study criteria
-      parameters:
-      - name: studytime
+      - name: G2
         in: query
-        description: weekly study time
+        description: second period grade
         required: false
         style: form
         explode: true
         schema:
-          maximum: 4
-          minimum: 1
-          type: integer
-          format: int32
-      - name: absences
-        in: query
-        description: number of school absences
-        required: false
-        style: form
-        explode: true
-        schema:
-          maximum: 93
+          maximum: 20
           minimum: 0
           type: integer
           format: int32
