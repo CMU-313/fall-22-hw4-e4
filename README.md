@@ -1,5 +1,8 @@
 # HW4 Starter Code and Instructions
 
+## Training Model Justification
+For our model, we used G1 (first period grade), G2 (second period grade), and failures (number of classes failed) as our 3 characteristics for our model to learn from. We split our data set into a training and test set and then ran the RandomForest algorithm on the training set. By doing so, we increased the accuracy of the model from 0.63 to 0.97. 
+
 Please consult the [homework assignment](https://cmu-313.github.io//assignments/hw4) for additional context and instructions for this code.
 
 ## pipenv
